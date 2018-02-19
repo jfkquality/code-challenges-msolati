@@ -7,12 +7,13 @@
 // Create random numbers list, the length of the # of pirates.
 let  pirates = 0;
 while (pirates < 2 || pirates > 5000) {
-    pirates = prompt("How many pirates are there (1-5000)?");
+    pirates = prompt("How many pirates are there (2-5000)?");
 }
 let redirect = [];
 let loop = [];
 let redirected = "";
 let out = "";
+
 for (x = 0; x < pirates; x++) {
     noSelfRedirect(redirect, pirates);
 }
