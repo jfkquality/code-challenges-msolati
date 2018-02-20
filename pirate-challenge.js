@@ -3,6 +3,8 @@
 // Keep track of redirected numbers/indices. In an array.
 // If current redirected number already visited, then there's a loop.
 // Count number of redirections in that loop and return that value.
+// Simple solution: http://jsbin.com/makesilade/edit?js,console
+// This solution on jsbin: http://jsbin.com/piqujepudi/edit?js,console
 
 let  piratesCount = 0;
 while (piratesCount < 2 || piratesCount > 5000) {
@@ -18,7 +20,7 @@ for (x = 0; x < piratesCount; x++) {
 out += "<p>" + piratesCount + " pirates passing the buck: " + pirates + "<p>";
 
 let piratesLoop = answer(pirates);
-out += "<p>Oh no! Caught in a loop! " + piratesLoop + "<p>";
+out += "<p>Oh no! Caught in a loop! " + piratesLoop.length + " pirates in the loop!</p>" + piratesLoop;
 
 for (let i = 0; i < piratesLoop.length; i++) {
     console.log(piratesLoop[i]);
@@ -45,6 +47,7 @@ function answer(numbers) {
         currentRedirect = numbers[currentRedirect];
     }
     out += "<p>On the trail... " + loop + "<p>";
+    out += "<p>Asked " + loop.length + " pirates</p>";
     loop = loop.slice(loop.indexOf(currentRedirect));
     return loop;    
 }
